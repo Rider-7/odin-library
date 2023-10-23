@@ -48,3 +48,49 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+/* ------ Main Page Styling ------ */
+@font-face {
+    font-family: 'Montserrat';
+    src: url("fonts\Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+    font-style: italic;
+}
+
+:root {
+    --primary-colour: #4E96EB;
+    --primary-accent-colour: #FFFFFF;
+    --box-shadow-colour: #00000040;
+
+    font-family: Montserrat,sans-serif;
+    font-weight: 700;
+}
+
+
+body {
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+
+    background-color: var(--primary-colour);
+    color: var(--primary-accent-colour);
+    height: 5rem;
+
+    box-shadow: 0px 4px 4px 0px var(--box-shadow-colour);
+}
+
+    .logo {
+        font-size: 3.6rem;
+        margin-left: 1rem;
+
+    }
