@@ -70,6 +70,7 @@ table {
     --box-shadow-colour: #00000040;
     --box-shadow-click-colour: #00000070;
     --card-colour: #D9F3FF;
+    --card-accent-colour: #5E658E;
 
     font-family: Montserrat,sans-serif;
     font-weight: 700;
@@ -106,7 +107,7 @@ body {
 
 .book-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
     margin: 24px;
 }
@@ -165,4 +166,28 @@ body {
 
     .card-content {
         margin: 20px;
+    }
+
+.book {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    color: var(--card-accent-colour);
+}
+
+    .book-info-main {
+
+    }
+
+    .book-title {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+        width:fit-content
+    }
+
+    .book-author {
+        font-size: 0.875rem;
+        font-variant: small-caps;
+        font-style: italic;
+        text-align: right;
     }
