@@ -107,14 +107,14 @@ body {
 
 .book-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
     margin: 24px;
 }
 
-/* ----- buttons styling ----- */
-.add-button {
-    background-color: transparent;
+/* ----- general button styling ----- */
+button {
+    background-color: var(--primary-accent-colour);
     border-style: solid;
     border-radius: 20px;
     border-color: var(--primary-colour);
@@ -128,27 +128,31 @@ body {
 
 }
 
-.add-button:hover {
+button:hover {
     background-color: var(--primary-colour);
     color: var(--primary-accent-colour);
     cursor: pointer;
     transition: background-color 300ms ;
 }
 
-.add-button:active {
+button:active {
     transition: none;
     background-color: #225591;
 }
 
-    .add-button-symbol {
-        font-size: 3rem;
-    }
 
-    .add-button-text {
-        font-size: 1.5rem;
-    }
+/* ----- specific button stylings ----- */
+.add-button-symbol {
+    font-size: 3rem;
+}
 
-/* ----- card layout ----- */
+.add-button-text {
+    font-size: 1.5rem;
+}
+
+/* .remove-button */
+
+/* ----- general card layout ----- */
 .card {
     display: grid;
     grid-template-columns: 40px 5fr;
@@ -168,16 +172,20 @@ body {
         margin: 20px;
     }
 
+    /* .card-segment {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        justify-items: center;
+        align-content: center;
+    } */
+
+/* ----- book card styling ----- */
 .book {
     display: flex;
     flex-direction: column;
     gap: 42px;
     color: var(--card-accent-colour);
 }
-
-    .book-info-main {
-
-    }
 
     .book-title {
         font-size: 1.25rem;
@@ -190,4 +198,21 @@ body {
         font-variant: small-caps;
         font-style: italic;
         text-align: right;
+    }
+
+    .book-pages {
+        font-size: 0.75rem;
+        font-variant: small-caps;
+        margin-bottom: 6px;
+    }
+
+    .book-status {
+        font-size: 0.8125rem;
+        color: black;
+    }
+
+    .book-button-list {
+        width: 10px;
+        height: 10px;
+        background-color: aliceblue;
     }
