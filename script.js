@@ -9,13 +9,29 @@ openFormButton.addEventListener('click', () => dialog.showModal());
 closeFormButton.addEventListener('click', () => dialog.close());
 
 const bookForm = document.getElementById('book-form');
-const bookList = document.querySelector('.book-list');
 
 function Book(title, author, numOfPages, isRead) {
     this.title = title;
     this.author = author;
     this.numOfPages = numOfPages;
     this.isRead = isRead;
+}
+
+function addNewBookCardDOM(book) {
+    const bookCardTemplate = document.querySelector('.book-card-template');
+    const bookList = document.querySelector('.book-list');
+
+    const newBookCard = bookCardTemplate.content.cloneNode(true);
+    
+    newBookCard.querySelector('.book-title').innerText=`${book['title']}`;
+    newBookCard.querySelector('.book-author').textContent=`BY ${book['author']}`;
+    newBookCard.querySelector('.book-pages').textContent=`NUMBER OF PAGES: ${book['numOfPages']}`;
+
+    const readStatus = book['isRead'] ? 'READ' : 'NOT READ';
+    newBookCard.querySelector('.book-status').textContent=`STATUS: ${readStatus}`;
+
+    bookList.appendChild(newBookCard);
+
 }
 
 function addBookToLibrary() {
@@ -25,6 +41,7 @@ function addBookToLibrary() {
         book[name] = value;
     }
     myLibrary.push(book);
+    addNewBookCardDOM(book);
 }
 
 bookForm.addEventListener('submit', (e) => {
