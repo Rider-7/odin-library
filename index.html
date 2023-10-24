@@ -12,7 +12,9 @@
     <header><span class="logo">LIBRARY</span></header>
 
     <div class="book-list">
-        <button type="button" class="add-button"><span class="add-button-symbol">+</span><span class="add-button-text">New Book</span></button>
+
+        <button type="button" class="open-form-button"><span class="add-button-symbol">+</span><span class="add-button-text">New Book</span></button>
+
         <div class="card">
             <div class="card-stripe"></div>
             <div class="card-content">
@@ -31,17 +33,20 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <dialog>
+
         <header><span class="logo">ADD BOOK</span></header>
-        <form>
+
+        <form id="book-form">
             <div>
                 <label for="title"><span>Title</span><input id="title" type="text" title="Title" name="title"></label>
                 <label for="author"><span>Author</span><input id="author" type="text" title="Author" name="author"></label>
             </div>
             <div>
-                <label for="num-of-pages"><span>Number of Pages</span><input id="num-of-pages" type="text" inputmode="numeric" title="numOfPages" name="number"></label>
+                <label for="num-of-pages"><span>Number of Pages</span><input id="num-of-pages" type="text" inputmode="numeric" title="Number of Pages" name="numOfPages"></label>
                 <label for="status">
                     <span>Status</span>
                     <select id="status" title="Status" name="isRead">
@@ -51,11 +56,12 @@
                 </label>
             </div>
             <div>
-                <button type="button" class="add-button">Add</button>
-                <button type="button" class="cancel-button">Cancel</button>
-                <button type="button" class="reset-button">Reset</button>
+                <button type="submit" form="book-form" class="add-button">Add</button>
+                <button type="button" form="book-form" class="cancel-button">Cancel</button>
+                <button type="reset" form="book-form" class="reset-button">Reset</button>
             </div>
         </form>
+
     </dialog>
 
 </body>
