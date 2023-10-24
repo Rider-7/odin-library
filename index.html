@@ -4,34 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <title>Library</title>
 </head>
 <body>
-    <header class="header">
-        <span class="logo">LIBRARY</span>
-    </header>
+
+    <header><span class="logo">LIBRARY</span></header>
+
     <div class="book-list">
-        <button class="add-button"><span class="add-button-symbol">+</span><span class="add-button-text">New Book</span>
-        </button>
-        <div class="card book-layout">
+        <button type="button" class="add-button"><span class="add-button-symbol">+</span><span class="add-button-text">New Book</span></button>
+        <div class="card">
             <div class="card-stripe"></div>
             <div class="card-content">
                 <div class="book">
-                    <div class="book-info-main">
+                    <div>
                         <div class="book-title">The Five People You Meet In Heaven</div>
                         <div class="book-author">BY MITCH ALBOM</div>
                     </div>
                     <div class="card-segment">
-                        <div class="book-info-secondary">
+                        <div>
                             <div class="book-pages">NUMBER OF PAGES: 200 PAGES</div>
                             <div class="book-status">STATUS: READ</div>
                         </div>
-                        <div class="book-button-list"><button class="remove-button">-</button></div>
+                        <div class="book-button-list"><button type="button" class="remove-button">Remove</button></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <dialog>
+        <header><span class="logo">ADD BOOK</span></header>
+        <form>
+            <div>
+                <label for="title"><span>Title</span><input id="title" type="text" title="Title" name="title"></label>
+                <label for="author"><span>Author</span><input id="author" type="text" title="Author" name="author"></label>
+            </div>
+            <div>
+                <label for="num-of-pages"><span>Number of Pages</span><input id="num-of-pages" type="text" inputmode="numeric" title="numOfPages" name="number"></label>
+                <label for="status">
+                    <span>Status</span>
+                    <select id="status" title="Status" name="isRead">
+                        <option value="true">Read</option>
+                        <option value="false">Not Read</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <button type="button" class="add-button">Add</button>
+                <button type="button" class="cancel-button">Cancel</button>
+                <button type="button" class="reset-button">Reset</button>
+            </div>
+        </form>
+    </dialog>
+
 </body>
 </html>
