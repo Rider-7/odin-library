@@ -255,6 +255,11 @@ button:active {
         font-size: 1.5rem;
     }
 
+    /* ----- card status button ----- */
+    .status-button {
+        display: inline;
+    } 
+
 /* ----- generic dialog layout ----- */
 dialog {
     padding: 0;

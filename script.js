@@ -29,6 +29,16 @@ function removeBookFromLibrary(bookTitle) {
     }
 }
 
+// Book Object - Update Functions
+function updateBookStatus(bookTitle, statusButtonEl) {
+    for (const book of myLibrary) {
+        if (book.title === bookTitle) {
+            book.isRead = !book.isRead;
+            statusButtonEl.textContent = book['isRead'] ? 'STATUS: READ' : 'STATUS: NOT READ';
+        }
+    }
+}
+
 // Book Card Element - Dynamic DOM Functions
 function addnewBookCardEl(book) {
     const bookCardTemplateEl = document.querySelector('.book-card-template');
@@ -39,8 +49,8 @@ function addnewBookCardEl(book) {
     newBookCardEl.querySelector('.book-title').textContent=`${book['title']}`;
     newBookCardEl.querySelector('.book-author').textContent=`BY ${book['author']}`;
     newBookCardEl.querySelector('.book-pages').textContent=`NUMBER OF PAGES: ${book['numOfPages']}`;
-    const readStatus = book['isRead'] ? 'READ' : 'NOT READ';
-    newBookCardEl.querySelector('.book-status').textContent=`STATUS: ${readStatus}`;
+    const readStatus = book['isRead'] ? 'STATUS: READ' : 'STATUS: NOT READ';
+    newBookCardEl.querySelector('.status-button').textContent=`${readStatus}`;
 
     bookListEl.appendChild(newBookCardEl);
 }
@@ -49,7 +59,9 @@ function removeBookCardEl(bookCardEl) {
     bookCardEl.remove();
 }
 
-
+function updateStatusButtonEl(statusButtonEl) {
+    statusButtonEl.textContent('')
+}
 
 // Event Listeners/ Handling
 
@@ -71,7 +83,7 @@ bookFormEl.addEventListener('submit', (e) => {
     console.log(myLibrary);
 });
 
-// Book Card - Remove Card
+// Book Card - Remove Card, Update Card Status
 const bookListEl = document.querySelector('.book-list');
 bookListEl.addEventListener('click', (e) => {
     if (e.target.className === 'remove-button') {
@@ -80,5 +92,13 @@ bookListEl.addEventListener('click', (e) => {
         removeBookFromLibrary(bookTitle);
         removeBookCardEl(bookCardEl);
         console.log(myLibrary);
+        return;
         }
+
+    if(e.target.className === 'status-button') {
+        const bookTitle = e.target.closest('.book').querySelector('.book-title').textContent;
+        const statusButtonEl = e.target;
+        updateBookStatus(bookTitle, statusButtonEl);
+        console.log(myLibrary);
+    }
     });
