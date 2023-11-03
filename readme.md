@@ -9,3 +9,12 @@ Project based on: https://www.theodinproject.com/lessons/node-path-javascript-li
 ![Alt text](docs/figma/library.png)
 ![Alt text](docs/figma/library-add-book-form.png)
 
+# Known Issues
+- CSS:
+    - long words will overflow the card element.
+- JS:
+    - Duplicate book entries are not handled and will cause issues.
+
+# Updates
+- 3/11/2023
+    - Refactored JS script to use classes and clean-up code.
